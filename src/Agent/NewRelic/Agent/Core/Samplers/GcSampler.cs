@@ -316,7 +316,7 @@ namespace NewRelic.Agent.Core.Samplers
             }
             catch (Exception ex)
             {
-                LogMessage(LogLevel.Finest, $"An exception occurred while attempting the to get the current Performance Counter Instance Name", ex);
+                LogMessage(LogLevel.Finest, $"An exception occurred while attempting to get the current Performance Counter Instance Name", ex);
                 HandleProblem();
                 return;
             }

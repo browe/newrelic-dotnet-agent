@@ -51,11 +51,13 @@ namespace NewRelic.SystemInterfaces
 
         public PerformanceCounterCategoryProxy(string categoryName)
         {
+            Log.Finest($"PerformanceCounterCategoryProxy.cctor(categoryName={categoryName}");
             _performanceCounterCategory = new PerformanceCounterCategory(categoryName);
         }
 
         public string[] GetInstanceNames()
         {
+            Log.Finest($"PerformanceCounterCategoryProxy.GetInstanceNames()");
             return _performanceCounterCategory.GetInstanceNames();
         }
     }
@@ -150,6 +152,9 @@ namespace NewRelic.SystemInterfaces
         /// <returns>The instance name that will be used to collect performance counter data for the process</returns>
         private string GetInstanceNameForProcessAndCategory(string perfCategoryName, string processName, int pid, string lastKnownName)
         {
+            // Troubleshooting logging for GTSE-12187
+            Log.Finest($"GetInstanceNameForProcessAndCategory(perfCategoryName={perfCategoryName}, processName={processName}, pid={pid}, lastKnownName={lastKnownName})");
+
             var performanceCategory = _createPerformanceCounterCategory(perfCategoryName);
 
             var instanceNames = performanceCategory.GetInstanceNames()
