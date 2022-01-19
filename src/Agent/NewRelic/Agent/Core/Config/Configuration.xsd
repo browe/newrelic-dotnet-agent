@@ -1687,6 +1687,14 @@
                 </xs:documentation>
               </xs:annotation>
             </xs:attribute>
+
+            <xs:attribute name="sendHostInfo" type="xs:boolean" default="true">
+              <xs:annotation>
+                <xs:documentation>
+                 Send utilization metadata about the host system on connect.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:attribute>
           </xs:complexType>
         </xs:element>
 

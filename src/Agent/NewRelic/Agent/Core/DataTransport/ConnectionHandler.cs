@@ -303,7 +303,7 @@ namespace NewRelic.Agent.Core.DataTransport
                 _labelsService.Labels,
                 GetJsAgentSettings(),
                 metadata ?? new Dictionary<string, string>(),
-                new UtilizationStore(_systemInfo, _dnsStatic, _configuration, _agentHealthReporter).GetUtilizationSettings(),
+                _configuration.UtilizationSendHostInfo ? new UtilizationStore(_systemInfo, _dnsStatic, _configuration, _agentHealthReporter).GetUtilizationSettings() : null,
                 _configuration.CollectorSendEnvironmentInfo ? _environment : null,
                 _configuration.SecurityPoliciesTokenExists ? new SecurityPoliciesSettingsModel(_configuration) : null,
                 new EventHarvestConfigModel(_configuration)

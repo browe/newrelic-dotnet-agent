@@ -1769,6 +1769,11 @@ namespace NewRelic.Agent.Core.Configuration
             }
         }
 
+        public bool UtilizationSendHostInfo
+        {
+            get { return _localConfiguration.utilization.sendHostInfo; }
+        }
+
         private readonly Lazy<string> _utilizationFullHostName;
         public string UtilizationFullHostName => _utilizationFullHostName.Value;
 
