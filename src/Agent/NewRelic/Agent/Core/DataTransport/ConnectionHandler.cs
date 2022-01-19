@@ -290,7 +290,7 @@ namespace NewRelic.Agent.Core.DataTransport
                 _processStatic.GetCurrentProcess().Id,
                 "dotnet",
                 _configuration.ProcessHostDisplayName,
-                _dnsStatic.GetHostName(),
+                _configuration.UtilizationHostName,
                 appNames,
                 AgentInstallConfiguration.AgentVersion,
                 AgentInstallConfiguration.AgentVersionTimestamp,
