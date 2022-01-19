@@ -1774,7 +1774,7 @@ namespace NewRelic.Agent.Core.Configuration
 
         private readonly Lazy<string> _utilizationHostName;
 
-        public string UtilizationHostName => _utilizationHostName.Value;
+        public string UtilizationHostName => EnvironmentOverrides(_utilizationHostName.Value, "NEW_RELIC_UTILIZATION_HOSTNAME");
 
         #endregion
 
