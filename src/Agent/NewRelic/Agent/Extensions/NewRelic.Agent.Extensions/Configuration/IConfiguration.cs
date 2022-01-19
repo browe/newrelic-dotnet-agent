@@ -168,6 +168,7 @@ namespace NewRelic.Agent.Configuration
         int? UtilizationLogicalProcessors { get; }
         int? UtilizationTotalRamMib { get; }
         string UtilizationBillingHost { get; }
+        bool UtilizationSendHostInfo { get; }
         string UtilizationHostName { get; }
         string UtilizationFullHostName { get; }
         bool DiagnosticsCaptureAgentTiming { get; }

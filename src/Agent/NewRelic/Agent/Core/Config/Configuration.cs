@@ -5235,6 +5235,8 @@ namespace NewRelic.Agent.Core.Config
         private System.Nullable<int> totalRamMibField;
         
         private string billingHostField;
+
+        private bool sendHostInfoField;
         
         /// <summary>
         /// configurationUtilization class constructor
@@ -5247,6 +5249,7 @@ namespace NewRelic.Agent.Core.Config
             this.detectPcfField = true;
             this.detectDockerField = true;
             this.detectKubernetesField = true;
+            this.sendHostInfoField = true;
         }
         
         [System.Xml.Serialization.XmlAttributeAttribute()]
@@ -5415,6 +5418,20 @@ namespace NewRelic.Agent.Core.Config
             set
             {
                 this.billingHostField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(true)]
+        public bool sendHostInfo
+        {
+            get
+            {
+                return this.sendHostInfoField;
+            }
+            set
+            {
+                this.sendHostInfoField = value;
             }
         }
         
